@@ -114,7 +114,7 @@ def get_data(data_type, data_options=None):
     labels = None
     pdf = None
     if data_type == 'load':
-        data_dict = np.load(data_options).item()
+        data_dict = np.load(data_options, allow_pickle=True).item()
         samples = data_dict['samples']
         pdf = data_dict['pdf']
         labels = data_dict['labels']
