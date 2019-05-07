@@ -33,6 +33,7 @@ def get_samples_and_labels(settings):
         samples, pdf, labels = get_data('load', data_path)
         train, vali, test = samples['train'], samples['vali'], samples['test']
         train_labels, vali_labels, test_labels = labels['train'], labels['vali'], labels['test']
+        train, vali, test = normalise_data(train, vali, test)
         del samples, labels
     elif settings['data'] == 'eICU_task':
         # always load eICU
